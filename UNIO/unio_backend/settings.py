@@ -10,8 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = os.getenv('SECRET_KEY', 'your-default-secret-key')
-DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -79,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'unio_backend.wsgi.application'
+
 
 # Database
 
@@ -89,6 +90,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
    }
 }
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -161,3 +164,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'TENANT': 'common',
     }
 }
+
+WSGI_APPLICATION = 'meeting_clone.wsgi.application'
+ROOT_URLCONF = 'meeting_clone.urls'
