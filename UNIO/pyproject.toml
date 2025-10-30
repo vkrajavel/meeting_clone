@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "meeting-clone"
+version = "0.1.0"
+description = "Google Meet Clone"
+authors = ["Your Name <email>"]
+
+[tool.poetry.dependencies]
+python = "^3.13"  # Matches Render's default
+django = "^5.0"   # Or ^4.2 if using older
+gunicorn = "^22.0"
+whitenoise = "^6.6"  # For static files on Render
+# Add Meet-specific: e.g., channels = "^4.0" for WebSockets, djangorestframework for API
+# If using PostgreSQL: psycopg2-binary = "^2.9"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.0"  # Optional dev tools
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
