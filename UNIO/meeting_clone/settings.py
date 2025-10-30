@@ -167,3 +167,4 @@ SOCIALACCOUNT_PROVIDERS = {
 
 WSGI_APPLICATION = 'meeting_clone.wsgi.application'
 ROOT_URLCONF = 'meeting_clone.urls'
+
