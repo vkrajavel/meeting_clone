@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_yasg',
     'allauth',
+    'channels',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
