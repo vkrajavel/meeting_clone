@@ -173,3 +173,5 @@ else:
 ROOT_URLCONF = 'UNIO.urls'               # <-- project-level urls.py
 WSGI_APPLICATION = 'UNIO.wsgi.application'
 
+# ---------- Channels ASGI ----------
+ASGI_APPLICATION = 'UNIO.asgi.application'

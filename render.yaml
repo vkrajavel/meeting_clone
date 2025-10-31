@@ -2,10 +2,19 @@ services:
   - type: web
     name: meeting-clone
     env: python
-    buildCommand: pip install -r requirements.txt
+    region: oregon
+    plan: free
+    branch: feature/initial-commit
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      python manage.py collectstatic --noinput
     startCommand: gunicorn UNIO.wsgi:application
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.7"
       - key: DJANGO_SETTINGS_MODULE
         value: UNIO.settings
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
