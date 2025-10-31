@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: meeting-clone
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn UNIO.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13
+      - key: DJANGO_SETTINGS_MODULE
+        value: UNIO.settings

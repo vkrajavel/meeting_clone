@@ -164,7 +164,11 @@ SOCIALACCOUNT_PROVIDERS = {
         'TENANT': 'common',
     }
 }
+if os.getenv("RENDER"):
+    load_dotenv("/etc/secrets/DOTENV")   # Render secret file path
+else:
+    load_dotenv(BASE_DIR / ".env")
 
-WSGI_APPLICATION = 'meeting_clone.wsgi.application'
-ROOT_URLCONF = 'meeting_clone.urls'
+ROOT_URLCONF = 'UNIO.urls'               # <-- project-level urls.py
+WSGI_APPLICATION = 'UNIO.wsgi.application'
 
