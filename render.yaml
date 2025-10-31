@@ -6,6 +6,6 @@ services:
     startCommand: gunicorn UNIO.wsgi:application
     envVars:
       - key: PYTHON_VERSION
-        value: 3.13
+        value: "3.12.7"
       - key: DJANGO_SETTINGS_MODULE
         value: UNIO.settings
